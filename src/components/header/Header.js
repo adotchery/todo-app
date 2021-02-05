@@ -4,17 +4,14 @@ import Button from '../button/Button';
 
 import classes from './Header.module.css';
 
-const Header = (props) => {
-    const onClick = () => {
-        console.log('[Header.js] clicked!');
-    }
-    
+const Header = ({ title, onAdd, showAdd }) => {
     return (
         <div className={classes.Header}>
-            <h1> {props.title} </h1>
-            <Button 
-            text='ADD!'
-            onClick={onClick}
+            <h1> {title} </h1>
+            <Button
+            color={showAdd ? 'red':'green'}
+            text={showAdd ? 'Close':'Add'}
+            onClick={onAdd}
             />
         </div>
     );
