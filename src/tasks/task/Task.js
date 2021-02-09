@@ -1,13 +1,11 @@
 import React from 'react'
 import { FaTimes } from 'react-icons/fa';
-import classes from './Task.module.css';
+import './Task.css';
 
 const Task = ({ task, onDelete, onToggle }) => {
-    // need some logic for this remainder toggle
-
     return (
         <div 
-            className={classes.task} 
+            className={`task ${task.reminder ? 'reminder' : ''}`}
             onDoubleClick={() => onToggle(task.id) }>
                 <h3>{task.text} 
                 <FaTimes 
